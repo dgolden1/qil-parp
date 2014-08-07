@@ -108,6 +108,11 @@ if p.Results.b_get_lasso_inputs_only
 end
 
 %% Run analysis
+patients_to_remove = [112, 113, 114];
+warning('Removing patients: %s', make_comma_separated_list(patients_to_remove));
+Y_vec{1}(ismember(feature_set.PatientIDs, patients_to_remove)) = [];
+feature_set = RemovePatients(feature_set, patients_to_remove);
+
 for kk = 1:length(Y_vec)
   lasso_runs(kk) = LassoRun(feature_set, Y_vec{kk}, Y_name_vec{kk}, 'y_positive_class_label', positive_class_label{kk});
 end
