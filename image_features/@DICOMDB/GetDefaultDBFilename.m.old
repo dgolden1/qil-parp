@@ -1,0 +1,8 @@
+function db_filename = GetDefaultDBFilename
+% Get default database filename
+% This method should be overloaded by subclasses
+
+% By Daniel Golden (dgolden1 at stanford dot edu) January 2013
+% $Id$
+
+error('No defined default DB filename for DICOMDB class');
