@@ -19,4 +19,8 @@ An example to reproduce the results for GLCM pre-chemo features on predicting pC
 
     addpaths;
     db = LoadDB(PARPDB, '/path/to/pre_res_1.5_resized_maps');
-    lr = RunLassoModel(db, {'b_glcm', true}, 'rcb_pcr', 'exclude_patients', [112 113 114]); 
+    
+    % These patients may be in the database, but they were not included in the run for the paper because the data were not available at that time
+    exclude_patients = [112 113 114];
+    
+    lr = RunLassoModel(db, {'b_glcm', true}, 'rcb_pcr', 'exclude_patients', exclude_patients); 
