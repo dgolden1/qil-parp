@@ -12,3 +12,11 @@ The code was written primarily by Daniel Golden. You can contact him at "dgolden
 Not all required code has been licensed for inclusion at this time (e.g., the pharmacokinetic modeling code). Inclusion is hopefully forthcoming.
 
 To fully reproduce the results, you will also need the MRI data. We are actively seeking permission to release that data.
+
+
+# Example
+An example to reproduce the results for GLCM pre-chemo features on predicting pCR:
+
+    addpaths;
+    db = LoadDB(PARPDB, '/path/to/pre_res_1.5_resized_maps');
+    lr = RunLassoModel(db, {'b_glcm', true}, 'rcb_pcr', 'exclude_patients', [112 113 114]); 
