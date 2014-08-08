@@ -27,6 +27,7 @@ p = inputParser;
 p.addParamValue('suffix', '');
 p.addParamValue('output_filename', '');
 p.addParamValue('output_dir', fullfile(qilcasestudyroot, 'parp', 'stat_analysis_runs', 'lasso_run_objects'));
+p.addParamValue('exclude_patients', []);
 p.addParamValue('b_get_lasso_inputs_only', false); % True to return lasso inputs instead of running lasso model
 p.parse(varargin{:});
 
@@ -105,6 +106,15 @@ end
 if p.Results.b_get_lasso_inputs_only
   varargout = {feature_set, Y_vec, Y_name_vec, positive_class_label};
   return;
+end
+
+%% Exclude patients based on exclude_patients parameter
+patients_to_remove = p.Results.exclude_patients;
+if ~isempty(patients_to_remove)
+  fprintf('Excluding additional patients by request: %s\n', make_comma_separated_list(patients_to_remove));
+  Y_vec{1}(ismember(feature_set.PatientIDs, patients_to_remove)) = [];
+  feature_set = RemovePatients(feature_set, patients_to_remove);
+  fprintf('Now running on %d patients\n', length(feature_set.PatientIDs));
 end
 
 %% Run analysis
