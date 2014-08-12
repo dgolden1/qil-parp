@@ -1,5 +1,5 @@
 function addpaths
-% Add qil paths that supersede CellScope ones
+% Add qil paths
 
 % base_path = '/Users/dgolden/Documents/qil/qil_software/qil';
 base_path = qilsoftwareroot;
