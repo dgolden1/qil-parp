@@ -24,7 +24,7 @@ end
 
 
 setup_prefix = 'DYLD_LIBRARY_PATH="";'; % Fixes a bug in Matlab implementation of libfreetype.6.dylib
-mogrify_path = '/opt/local/bin/mogrify'; % OS X 10.7
+mogrify_path = get_sys_cmd_path('mogrify');
 
 % Manually-downloaded version of ImageMagick to fix bug relating to png getting darker
 % after conversion

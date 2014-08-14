@@ -92,7 +92,7 @@ end
 % -qscale -- constant quality (1 is probably the best)
 % -i -- input files
 % -vcodec -- video codec (mjpeg is meant for jpeg inputs)
-ffmpeg_path = '/opt/local/bin/ffmpeg'; % OS X 10.7
+ffmpeg_path = get_sys_cmd_path('ffmpeg');
 cmd = sprintf('%s%s -y -intra -r %d -qscale 1 -i %s/frame%%05d.jpg -vcodec mjpeg %s', ...
   DYLD_prefix, ffmpeg_path, framerate, frame_dir, fullfile(output_filename));
 fprintf('%s\n', cmd);
