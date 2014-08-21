@@ -12,3 +12,4 @@ image_features/cox_lasso_r/glmnet.pdf
 image_features/cox_lasso_r/Rplots.pdf
 image_features/cox_lasso_r/survival.pdf
 osirix_spline_interpolate.m
+external/export_fig/.ignore
