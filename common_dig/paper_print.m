@@ -35,9 +35,6 @@ p.addParamValue('upsample_small_bitmaps', false);
 p.parse(varargin{:});
 
 %% Setup
-addpath(fullfile(danmatlabroot, 'export_fig'));
-addpath(fullfile(danmatlabroot, 'plot2svg'));
-
 if ~exist('str_fig_size', 'var') || isempty(str_fig_size)
 	str_fig_size = 'half';
 end
