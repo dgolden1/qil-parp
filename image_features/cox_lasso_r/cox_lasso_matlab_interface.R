@@ -7,7 +7,7 @@
 graphics.off() # Close open figures
 rm(list = ls()) # Clear workspace
 
-source('/Users/dgolden/software/image_features/cox_lasso_r/cox_lasso_fcn.R')
+source('/Users/dgolden/Documents/qil/qil_software/qil/image_features/cox_lasso_r/cox_lasso_fcn.R')
 source('/tmp/data_from_matlab.R')
 library(R.matlab)
 
