@@ -7,8 +7,9 @@ rng('default');
 
 db_path = '/Users/dgolden/Documents/qil/case_studies/parp/parp_db/pre_res_1.5_resized_maps';
 db = LoadDB(PARPDB, db_path);
-% patient_ids = GetPatientList(db);
 
+% Hard code in patient ids; some patients in DB don't have response defined
+% patient_ids = GetPatientList(db);
 patient_ids = [1 2 3 4 5 6 7 8 9 13 16 17 19 20 21 22 24 25 27 28 31 34 35 36 38 40 41 45 46 47 48 49 50 52 53 54 58 60 63 64 65 68 69 70 71 101 103 104 105 106 108 110 111]';
 
 %% Get response
