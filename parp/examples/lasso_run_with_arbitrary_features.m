@@ -27,6 +27,8 @@ feature_category_name = 'fake';
 feature_category_pretty_name = 'fake';
 
 feature_set = FeatureSet(features, patient_ids, feature_names, feature_pretty_names, feature_category_name, feature_category_pretty_name);
+
+%% Assign response
 feature_set.Response = categories.tumor;
 
 %% Run LassoRun
