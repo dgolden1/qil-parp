@@ -66,14 +66,14 @@ if p.Results.b_fdr_plots
   box on;
 
   subplot(2, 2, 2);
-  plot(p_vals(idx_sort), q(idx_sort), 'linewidth', 2)
+  plot(p_vals(idx_sort), q(idx_sort), 'k', 'linewidth', 2)
   xlabel('p-value');
   ylabel('q-value');
   grid on;
 
   subplot(2, 2, 3);
   [f, x] = ecdf(q);
-  stairs(x, f*length(q), 'linewidth', 2);
+  stairs(x, f*length(q), 'k', 'linewidth', 2);
   if var(q) > 1e-4
     xlim(quantile(q, [0 1]));
   end
@@ -82,7 +82,7 @@ if p.Results.b_fdr_plots
   grid on;
 
   subplot(2, 2, 4);
-  plot(1:length(q), flatten((1:length(q))).*flatten(q(idx_sort)), 'linewidth', 2);
+  plot(1:length(q), flatten((1:length(q))).*flatten(q(idx_sort)), 'k', 'linewidth', 2);
   xlabel('# significant features');
   ylabel('# false positives');
   grid on;
