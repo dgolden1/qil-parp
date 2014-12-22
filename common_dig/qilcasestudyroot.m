@@ -10,14 +10,7 @@ if ~isempty(d_root)
 	return;
 end
 
-[stat, hostname] = unix('hostname');
-switch hostname(1:end-1) % Get rid of newline
-	case {'dantop.local','goldenmac.stanford.edu','dantop-air.local','dantop-air'}
-		d_root = '/Users/dgolden/documents/qil/case_studies';
-  otherwise
-    error('Unknown hostname ''%s''', hostname(1:end-1));
-    % d_root = uigetdir(pwd, 'Choose case study directory');
-end
+d_root = '/Users/dgolden/documents/qil/case_studies';
 
 if ~exist(d_root, 'dir')
   error('%s is not a valid directory', d_root);
