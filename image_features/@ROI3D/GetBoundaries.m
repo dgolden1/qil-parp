@@ -28,12 +28,12 @@ yl = mean(yl) + diff(yl)/2*[-1 1]*p.Results.zoom_factor;
 zl = mean(zl) + diff(zl)/2*[-1 1]*p.Results.zoom_factor;
 
 % Keep bounds within the border of the image
-xl = max(min(xl, length(obj.ImageX)), 1);
-yl = max(min(yl, length(obj.ImageY)), 1);
+xl = max(min(xl, length(obj.ImageXmm)), 1);
+yl = max(min(yl, length(obj.ImageYmm)), 1);
 zl = max(min(zl, length(obj.ImageZmm)), 1);
 
 %% Convert to mm
 if p.Results.b_mm
-  [xl, yl] = px_to_mm(obj.ImageX, obj.ImageY, xl, yl);
-  zl = px_to_mm(obj.ImageZmm, obj.ImageY, zl, []);
+  [xl, yl] = px_to_mm(obj.ImageXmm, obj.ImageYmm, xl, yl);
+  zl = px_to_mm(obj.ImageZmm, obj.ImageYmm, zl, []);
 end

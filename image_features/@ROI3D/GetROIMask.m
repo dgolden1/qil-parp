@@ -4,7 +4,7 @@ function value = GetROIMask(obj)
 % By Daniel Golden (dgolden1 at stanford dot edu) January 2013
 % $Id$
 
-mask_3d = false(length(obj.ImageY), length(obj.ImageX), length(obj.ImageZmm));
+mask_3d = false(length(obj.ImageYmm), length(obj.ImageXmm), length(obj.ImageZmm));
 
 for kk = 1:length(obj.ROIs)
   % Assign the 2D mask from this 2D ROI to the appropriate slice of the 3D mask

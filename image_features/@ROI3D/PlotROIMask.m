@@ -16,8 +16,8 @@ if ~isequal(obj, last_obj)
 
   mask = mask(1:downsample_factor:end, 1:downsample_factor:end, 1:downsample_factor:end);
 
-  x = obj.ImageX(1:downsample_factor:end);
-  y = obj.ImageY(1:downsample_factor:end);
+  x = obj.ImageXmm(1:downsample_factor:end);
+  y = obj.ImageYmm(1:downsample_factor:end);
   z = obj.ImageZmm(1:downsample_factor:end);
   
   last_obj = obj;

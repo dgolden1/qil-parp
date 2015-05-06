@@ -15,8 +15,8 @@ classdef ROI3D
   end
   
   properties(Dependent)
-    ImageX % Volume x coordinate in mm
-    ImageY % Volume y coordinate in mm
+    ImageXmm % Volume x coordinate in mm
+    ImageYmm % Volume y coordinate in mm
     bPlotInUnits % Make plots in mm instead of pixels
   end
   
@@ -37,39 +37,39 @@ classdef ROI3D
       %obj.ROIMask = GetROIMask(obj); % Massively increases ROI file size, possibly to 10s of MB
     end
     
-    function value = get.ImageX(obj)
+    function value = get.ImageXmm(obj)
       if isempty(obj.ROIs)
         value = [];
       else
-        value = obj.ROIs(1).ImageX;
+        value = obj.ROIs(1).ImageXmm;
       end
     end
     
-    function obj = set.ImageX(obj, value)
+    function obj = set.ImageXmm(obj, value)
       if isempty(obj.ROIs)
         return;
       end
       
       for kk = 1:length(obj.ROIs)
-        obj.ROIs(kk).ImageX = value;
+        obj.ROIs(kk).ImageXmm = value;
       end
     end
     
-    function value = get.ImageY(obj)
+    function value = get.ImageYmm(obj)
       if isempty(obj.ROIs)
         value = [];
       else
-        value = obj.ROIs(1).ImageY;
+        value = obj.ROIs(1).ImageYmm;
       end
     end
     
-    function obj = set.ImageY(obj, value)
+    function obj = set.ImageYmm(obj, value)
       if isempty(obj.ROIs)
         return;
       end
       
       for kk = 1:length(obj.ROIs)
-        obj.ROIs(kk).ImageY = value;
+        obj.ROIs(kk).ImageYmm = value;
       end
     end
     
