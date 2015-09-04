@@ -74,7 +74,7 @@ classdef ROI3D
     end
     
     function value = get.bPlotInUnits(obj)
-      value = obj.ROIs(1).bPlotInUnits;
+      value = 'mm';
     end
     
     function obj = set.bPlotInUnits(obj, value)
